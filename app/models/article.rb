@@ -2,8 +2,9 @@ class Article < ActiveRecord::Base
   belongs_to :user
   has_many :article_categories
   has_many :categories, through: :article_categories
+  accepts_nested_attributes_for :categories
   
   validates :title, presence: true
   validates :content, presence: true
-  validates :category, presence: true
+  validates :categories, presence: true
 end

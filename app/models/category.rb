@@ -1,10 +1,8 @@
 class Category < ActiveRecord::Base
-  belongs_to :user
   has_many :article_categories
   has_many :articles, through: :article_categories
+  #accepts_nested_attributes_for :articles
   
-  validates :name
-    presence: true, 
-    uniqueness: true
+  validates_uniqueness_of :name
   
 end
