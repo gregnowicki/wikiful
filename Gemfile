@@ -16,3 +16,7 @@ end
 
 # Use pg as teh database for production/Heroku
 gem 'pg'
+
+gem 'twitter-bootstrap-rails'
+gem 'less-rails'
+gem 'therubyracer'
