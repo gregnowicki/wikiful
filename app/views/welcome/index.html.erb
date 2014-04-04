@@ -1,8 +1,5 @@
 <h1>Welcome to Wikiful</h1>
   <p class="lead">Welcome to Wikiful. Most recent articles below:</p>
-  <div class="articles row">
-   
- <div class="articles row">
   
  	<% @recent_articles.each do |article| %>
  	  <h2>
@@ -17,4 +14,3 @@
  	  	<%= link_to "Read more", article %>
  	  </div>
  	<% end %>
- </div>
