@@ -2,8 +2,13 @@
     <h1>Welcome to Wikiful</h1>
     <p class="lead">Welcome to Wikiful. Here are the most recent articles:</p>
 </div>
-<div class = "top_articles">
- 	<% @recent_articles.each do |article| %>
+
+
+
+    <div id="masonry-container" class="transitions-enabled centered infinite-scroll clearfix">
+  <% @recent_articles.each do |article| %>
+
+    <div class="box col2">
  	  <h2>
  	  	<%= link_to article.title, article %>
  	  </h2>
@@ -15,5 +20,7 @@
  	  	<%= truncate(article.content, :length => 400) %><br />
  	  	<%= link_to "Read more", article %>
  	  </div>
+        </div>
+
  	<% end %>
-</div>
+  </div>
