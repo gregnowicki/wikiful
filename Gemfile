@@ -18,5 +18,7 @@ end
 gem 'pg'
 
 gem 'twitter-bootstrap-rails'
+gem 'flatui-rails'
 gem 'less-rails'
 gem 'therubyracer'
+gem 'bcrypt-ruby', '~> 3.0.0'

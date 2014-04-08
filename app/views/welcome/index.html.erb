@@ -1,6 +1,8 @@
-<h1>Welcome to Wikiful</h1>
-  <p class="lead">Welcome to Wikiful. Most recent articles below:</p>
-  
+<div class="jumbotron">
+    <h1>Welcome to Wikiful</h1>
+    <p class="lead">Welcome to Wikiful. Here are the most recent articles:</p>
+</div>
+<div class = "top_articles">
  	<% @recent_articles.each do |article| %>
  	  <h2>
  	  	<%= link_to article.title, article %>
@@ -14,3 +16,4 @@
  	  	<%= link_to "Read more", article %>
  	  </div>
  	<% end %>
+</div>
