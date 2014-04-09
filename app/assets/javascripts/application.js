@@ -16,4 +16,17 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require flat-ui
+//= require masonry/jquery.event-drag
+//= require masonry/jquery.imagesloaded.min
+//= require masonry/jquery.infinitescroll.min
+//= require masonry/modernizr-transitions
 //= require_tree .
+
+$(function(){  
+  $('#masonry-container').masonry({
+    itemSelector: '.box',
+    columnWidth: 200,
+    isAnimated: !Modernizr.csstransitions,
+    isFitWidth: true
+  });
+});

@@ -1,4 +1,5 @@
 Wikiful::Application.routes.draw do
+  resources :sessions
   resources :users
   resources :articles
   resources :categories
