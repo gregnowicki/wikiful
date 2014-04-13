@@ -10,35 +10,39 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-    
+
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
       <%= link_to "Wikiful", root_path, :class => "brand" %>
-       <div class='session-controls'> 
-          <% if current_user %>
-            Logged in as <%= current_user.email %>.
-          <% else %>
+       <div class='session-controls'>
+            <% if current_user %>
+            <%= link_to "Log Out", session_path("current"), method: 'delete', :class => 'btn logout' %>
+            <% else %>
             <div class="btn-group">
-              <%= link_to "Sign Up", new_user_path, :class => "btn btn-mini" %>
-              <%= link_to "Log In", new_session_path, :class => "btn btn-mini" %>
+              <%= link_to "Sign Up", new_user_path, :class => "btn" %>
+              <%= link_to "Log In", new_session_path, :class => "btn" %>
+
+
+
+
             </div>
           <% end %>
        </div>
     </div>
   </div>
 </div>
-    
+
    <div class="container">
-    
+
       <div class="row">
         <div class="span4">
           <% flash.each do |name, msg| %>
-          <%= content_tag :div, msg, id: "flash_#{name}" %>
+          <%= content_tag :div, msg, id: "flash_#{name}", :class => 'alert alert-success' %>
         <% end %>
         </div>
       </div>
-  
+
         <div class="row">
           <div class="span9">
              <div class="content"><%= yield %></div>
