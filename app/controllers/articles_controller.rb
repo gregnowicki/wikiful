@@ -5,6 +5,12 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+
   end
 
   def new
@@ -18,6 +24,15 @@ class ArticlesController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def edit
+    @article = Article.find(params[:id])
+  end
+
+  def update
+    @article = Article.update(article_params)
+    redirect_to @article
   end
 
   private
