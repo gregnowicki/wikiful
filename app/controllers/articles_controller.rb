@@ -1,8 +1,8 @@
 class ArticlesController < ApplicationController
- def index
-   @articles = Article.order(updated_at: :desc).limit(25)
+  def index
+    @articles = Article.order(updated_at: :desc).limit(25)
   end
-  
+
   def show
     @article = Article.find(params[:id])
   end
@@ -19,10 +19,10 @@ class ArticlesController < ApplicationController
       render 'new'
     end
   end
-  
+
   private
   def article_params
     params.require(:article).permit(:title, :content, :category_ids => [])
   end
 
-  end
+end
